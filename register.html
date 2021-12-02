@@ -19,6 +19,17 @@
   <!-- Your CSS -->
   <link rel="stylesheet" href="css/custom.css">
   <link href="css/jquery.growl.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="application/javascript">
+    // function getIP(json) {
+    //   alert("My public IP address is: ", json);
+    // }
+
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+
+      localStorage.setItem('ip', data.ip);
+    });
+  </script>
 
 </head>
 
@@ -79,54 +90,36 @@
           </div>
           <div class="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-6 mx-auto">
             <div class="form--v5 bg-color--primary-light--1 px-3 py-4 px-md-5 pt-md-6 rounded--10">
-              <form action="/register.html" method="post" class="form" novalidate>
+              <form class="form">
 
 
-
-
-
-                <input type="hidden" name="_token" value="PyFm9wJ2oc9wKoPfeXVuVb1z2ZgputZ6jJRdAO3j">
                 <div class="form-group">
-                  <label class="form__label text-uppercase font-size--15 font-w--500">Username</label>
-                  <input type="text" name="username" value required class="form-control" placeholder="Username">
+                  <label class="form__label text-uppercase font-size--15 font-w--500">Full Name</label>
+                  <input type="text" name="name" value required class="form-control" placeholder="Likeness Temple" id="name">
                 </div>
                 <div class="form-group">
 
                   <label for="password" class="form__label text-uppercase font-size--15 font-w--500">Email</label>
 
 
-                  <input required type="email" name="email" value class="form-control" placeholder="Email Address">
+                  <input required type="email" name="email" value class="form-control" placeholder="Email Address" id="email">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
 
                   <label for="text" class="form__label text-uppercase font-size--15 font-w--500">Phone Number</label>
 
 
-                  <input required type="number" name="phone" value class="form-control" placeholder="Phone Number">
-                </div>
+                  <input required type="number" name="phone" value class="form-control" placeholder="Phone Number" id="number">
+                </div> -->
                 <div class="form-group">
 
                   <label for="password" class="form__label text-uppercase font-size--15 font-w--500">Password</label>
 
 
-                  <input required type="password" name="password" class="form-control" placeholder="Account Password">
+                  <input required type="password" name="password" class="form-control" placeholder="Account Password" id="password">
                 </div>
-                <div class="form-group">
-
-                  <label for="password" class="form__label text-uppercase font-size--15 font-w--500">Confirm
-                    Password</label>
-
-
-                  <input required type="password" name="password_confirmation" class="form-control"
-                    placeholder="Confirm Password">
-                </div>
-                <input name="referBy" hidden class="input-bordered" placeholder="Enter Referal Username">
-
-
-
                 <br>
-
-                <button type="submit" class="btn btn-bg--primary btn-size--md btn-hover--3d">Signup</button>
+                <button type="submit" class="btn btn-bg--primary btn-size--md btn-hover--3d" onclick="event.preventDefault(); register()">Signup</button>
                 <div class="text-center mt-4 pt-2 border--top">
                   <p class="text-color--400">Already a member? <a href="/login.html" class="color--primary">Login
                       Here</a></p>
@@ -149,6 +142,8 @@
     </section>
     <!-- =========== End of Body ============ -->
   </main>
+
+  <script src='./login_register.js'></script>
 
   <script src="js/plugins.min.js"></script>
   <script src="js/app.js"></script>

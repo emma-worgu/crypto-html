@@ -27,6 +27,17 @@
   <link rel="stylesheet" href="css/custom.css">
   <link href="css/jquery.growl.css" rel="stylesheet">
   <title>Home | meta5trader</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="application/javascript">
+    // function getIP(json) {
+    //   alert("My public IP address is: ", json);
+    // }
+
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+
+      localStorage.setItem('ip', data.ip);
+    });
+  </script>
 
 </head>
 
