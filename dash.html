@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="@page-discription">
   <link rel="shortcut icon" href="images/favicon.png">
-  <title>Dashboard | meta5trader </title>
+  <title>Dashboard | meta2trader </title>
   <link rel="stylesheet" href="css/dashlite-63021.css">
   <link id="skin-purple" rel="stylesheet" href="css/theme-63021.css">
   <link href="css/jquery.growl.css" rel="stylesheet">
@@ -15,7 +15,14 @@
 </head>
 
 
+<script>
+  function logout () {
+  localStorage.removeItem('token');
 
+  document.location.href = '/login.html';
+};
+
+</script>
 <body class="nk-body toastr-info npc-crypto has-sidebar has-sidebar-fat ui-clean ">
   <div class="nk-app-root">
     <div class="nk-main ">
@@ -35,8 +42,8 @@
                 <div class="user-account-info between-center">
                   <div class="user-account-main">
                     <h6 class="overline-title-alt">Fiat Balance</h6>
-                    <div class="user-balance">0.00 <small class="currency currency-btc">$</small></div>
-                    <div class="user-balance-alt">0.00 <span class="currency currency-btc">$</span><small>
+                    <div class="user-balance accountBalance">0.00<small class="currency currency-btc">$</small></div>
+                    <div class="user-balance-alt investmentBal">0.00 <span class="currency currency-btc">$</span><small>
                         (bonus)</small></div>
                   </div><a href="#" class="btn btn-white btn-icon btn-light"><em class="icon ni ni-line-chart"></em></a>
                 </div>
@@ -46,8 +53,8 @@
                   <div class="user-card-wrap">
                     <div class="user-card">
                       <div class="user-avatar"><span></span></div>
-                      <div class="user-info"><span class="lead-text">emma-56</span><span
-                          class="sub-text">emmanuelworgu@gmail.com</span></div>
+                      <div class="user-info"><span class="lead-text accountName">Loading...</span><span
+                          class="sub-text accountEmail">Loading...</span></div>
                       <div class="user-action"><em class="icon ni ni-chevron-down"></em></div>
                     </div>
                   </div>
@@ -56,8 +63,8 @@
                   <div class="user-account-info between-center">
                     <div class="user-account-main">
                       <h6 class="overline-title-alt">Fiat Balance</h6>
-                      <div class="user-balance">0.00 <small class="currency currency-btc">$</small></div>
-                      <div class="user-balance-alt">0.00 <span class="currency currency-btc">$</span>
+                      <div class="user-balance accountBalance">0.00 <small class="currency currency-btc">$</small></div>
+                      <div class="user-balance-alt investmentBal">0.00 <span class="currency currency-btc">$</span>
                         <sma;;>(Bonus)</sma;;>
                       </div>
                     </div><a href="#" class="btn btn-icon btn-light"><em class="icon ni ni-line-chart"></em></a>
@@ -70,11 +77,11 @@
                   </ul>
                   <ul class="link-list">
                     <li><a href="#"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        onclick="event.preventDefault(); logout()">
 
-                        <form id="logout-form" action="https://meta5trader.com/logout" method="POST"
-                          style="display: none;"><input type="hidden" name="_token"
-                            value="PyFm9wJ2oc9wKoPfeXVuVb1z2ZgputZ6jJRdAO3j"></form>
+                        <form id="logout-form"
+                          style="display: none;">
+                        </form>
 
                         <em class="icon ni ni-signout"></em><span>Sign out</span>
                       </a></li>
@@ -219,7 +226,7 @@
                         </div>
                         <div class="user-info d-none d-md-block">
                           <div class="user-status user-status-unverified">Good afternoon</div>
-                          <div class="user-name dropdown-indicator">emma-56</div>
+                          <div class="user-name dropdown-indicator accountName">Loading...</div>
                         </div>
                       </div>
                     </a>
@@ -229,13 +236,14 @@
 
 
                           <div class="user-avatar"><span></span></div>
-                          <div class="user-info"><span class="lead-text">emma-56</span><span
-                              class="sub-text">emmanuelworgu@gmail.com</span></div>
+                          <div class="user-info">
+                            <span class="lead-text accountName">Loading...</span>
+                            <span class="sub-text accountEmail">Loading...</span></div>
                         </div>
                       </div>
                       <div class="dropdown-inner user-account-info">
                         <h6 class="overline-title-alt">Fiat Account</h6>
-                        <div class="user-balance">0.00 <small class="currency currency-btc">$</small></div>
+                        <div class="user-balance accountBalance">0.00 <small class="currency currency-btc">$</small></div>
                         <div class="user-balance-sub">Bonus <span>0.00 <span
                               class="currency currency-btc">$</span></span></div>
                       </div>
@@ -249,8 +257,8 @@
                       </div>
                       <div class="dropdown-inner">
                         <ul class="link-list">
-                          <li><a href="https://meta5trader.com/logout"
-                              onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><em
+                          <li><a href="#"
+                              onclick="event.preventDefault(); logout()"><em
                                 class="icon ni ni-signout"></em><span>Sign out</span></a></li>
                         </ul>
                       </div>
@@ -359,7 +367,7 @@
                             <div class="nk-wg7">
                               <div class="nk-wg7-stats">
                                 <div class="nk-wg7-title">Available balance in $</div>
-                                <div class="number-lg amount">$ 0.00 </div>
+                                <div class="number-lg amount accountBalance">$ 0.00</div>
                               </div>
                               <div class="nk-wg7-stats-group">
                                 <div class="nk-wg7-stats w-50">
@@ -368,7 +376,7 @@
                                 </div>
                                 <div class="nk-wg7-stats w-50">
                                   <div class="nk-wg7-title">Earnings</div>
-                                  <div class="number">$ 0.00 </div>
+                                  <div class="number investmentBal">$ 0.00 </div>
                                 </div>
                               </div>
                               <div class="nk-wg7-foot">
@@ -531,7 +539,7 @@
             </div>
             <br><br>
             <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container" style="overflow: auto;">
               <div id="tradingview_1aef6"></div>
               <div class="tradingview-widget-copyright"><a
                   href="https://www.tradingview.com/symbols/BTCUSD/?exchange=COINBASE" rel="noopener"
@@ -579,7 +587,7 @@
                         </div>
                         <div class="form-icon"><em class="icon ni ni-link-alt"></em></div>
                         <input type="text" class="form-control copy-text" id="refUrl"
-                          value="">
+                          value="Loading..." readonly>
                       </div>
                     </div>
                   </div>
@@ -740,7 +748,7 @@
 
                 </div>
                 <div class="nk-modal-action">
-                  <a href="https://meta5trader.com/user/user/daily/rewards" class="btn btn-lg btn-mw btn-primary">Earn
+                  <a href="#" class="btn btn-lg btn-mw btn-primary">Earn
                     Bonus</a>
                 </div>
               </div>
@@ -757,7 +765,7 @@
       <div class="nk-footer nk-footer-fluid">
         <div class="container-fluid">
           <div class="nk-footer-wrap">
-            <div class="nk-footer-copyright"> &copy; 2021 meta5trader </div>
+            <div class="nk-footer-copyright"> &copy; 2021 meta2trader </div>
             <div class="nk-footer-links">
               <ul class="nav nav-sm">
                 <li class="nav-item"><a class="nav-link" href="#">Terms</a></li>
@@ -770,6 +778,8 @@
       </div>
     </div>
   </div>
+
+  <script defer="true" src="data.js"></script>
   <script src="https://meta5trader.com/backend/js/bundle.js?ver=1.6.1"></script>
   <script src="https://meta5trader.com/backend/js/scripts.js?ver=1.6.1"></script>
   <script src="https://meta5trader.com/backend/js/demo-settings.js?ver=1.6.1"></script>
@@ -782,20 +792,6 @@
   <script src="https://meta5trader.com/frontend/js/sample.js"></script>
   <script src="https://meta5trader.com/frontend/js/jquery.growl.js"></script>
 
-
-
-
-
-
-
-
-  <script>
-    let refUrl = window.location.host;
-  
-    console.log(refUrl);
-  
-    document.getElementById('refUrl').value = refUrl;
-  </script>
 
 </body>
 

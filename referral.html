@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="@page-discription">
   <link rel="shortcut icon" href="images/favicon.png">
-  <title>Referral Log | meta5trader </title>
+  <title>Referral Log | meta2trader </title>
   <link rel="stylesheet" href="css/dashlite-63021.css">
   <link id="skin-purple" rel="stylesheet" href="css/theme-63021.css">
   <link href="css/jquery.growl.css" rel="stylesheet">
@@ -44,8 +44,8 @@
                   <div class="user-card-wrap">
                     <div class="user-card">
                       <div class="user-avatar"><span></span></div>
-                      <div class="user-info"><span class="lead-text">emma-56</span><span
-                          class="sub-text">emmanuelworgu@gmail.com</span></div>
+                      <div class="user-info"><span class="lead-text accountName">Loading...</span><span
+                          class="sub-text accountEmail">Loading...</span></div>
                       <div class="user-action"><em class="icon ni ni-chevron-down"></em></div>
                     </div>
                   </div>
@@ -67,12 +67,10 @@
                           class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
                   </ul>
                   <ul class="link-list">
-                    <li><a href="https://meta5trader.com/logout"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <li><a href="#"
+                        onclick="event.preventDefault(); logout();">
 
-                        <form id="logout-form" action="https://meta5trader.com/logout" method="POST"
-                          style="display: none;"><input type="hidden" name="_token"
-                            value="PyFm9wJ2oc9wKoPfeXVuVb1z2ZgputZ6jJRdAO3j"></form>
+                        <form id="logout-form"></form>
 
                         <em class="icon ni ni-signout"></em><span>Sign out</span>
                       </a></li>
@@ -217,7 +215,7 @@
                         </div>
                         <div class="user-info d-none d-md-block">
                           <div class="user-status user-status-unverified">Good afternoon</div>
-                          <div class="user-name dropdown-indicator">emma-56</div>
+                          <div class="user-name dropdown-indicator accountName">Loading...</div>
                         </div>
                       </div>
                     </a>
@@ -227,8 +225,8 @@
 
 
                           <div class="user-avatar"><span></span></div>
-                          <div class="user-info"><span class="lead-text">emma-56</span><span
-                              class="sub-text">emmanuelworgu@gmail.com</span></div>
+                          <div class="user-info"><span class="lead-text">Loading...</span><span
+                              class="sub-text accountEmail">Loading...</span></div>
                         </div>
                       </div>
                       <div class="dropdown-inner user-account-info">
@@ -247,8 +245,8 @@
                       </div>
                       <div class="dropdown-inner">
                         <ul class="link-list">
-                          <li><a href="https://meta5trader.com/logout"
-                              onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><em
+                          <li><a href="#"
+                              onclick="event.preventDefault(); logout();"><em
                                 class="icon ni ni-signout"></em><span>Sign out</span></a></li>
                         </ul>
                       </div>
@@ -297,11 +295,11 @@
                     <div class="card-inner-group">
                       <div class="card-inner position-relative card-tools-toggle">
                         <div class="card-head">
-                          <h5 class="card-title card-title-md">Invite your friends and family to meta5trader and receive
+                          <h5 class="card-title card-title-md">Invite your friends and family to meta2trader and receive
                             free cryptos and fund</h5>
                         </div>
                         <div class="card-text">
-                          <p>Each member have a unique meta5trader referral link to share with friends and family and
+                          <p>Each member have a unique meta2trader referral link to share with friends and family and
                             receive a <strong>bonus of $5.00</strong> when they verify their account. If any one sign-up
                             with your link, he or she will be added to your referral program. Your referral link may be
                             used to invite more users.</p>
@@ -312,12 +310,12 @@
                             <div class="title-sub">Copy the below link to invite your friends.</div>
                           </div>
                           <div class="nk-refwg-action"><a
-                              href="http://www.facebook.com/share.php?u=https://meta5trader.com/register/emma-56&amp;title= Referral Link"
-                              class="btn btn-primary"><em class="icon ni ni-facebook-f"></em>Share </a></div>
+                              href=""
+                              class="btn btn-primary" id="facebook"><em class="icon ni ni-facebook-f"></em>Share </a></div>
 
                           <div class="nk-refwg-action"><a
-                              href="whatsapp://send?text=https://meta5trader.com/register/emma-56"
-                              class="btn btn-success"><em class="icon ni ni-whatsapp"></em> Invite</a></div>
+                              href=""
+                              class="btn btn-success" id="whatsapp"><em class="icon ni ni-whatsapp"></em> Invite</a></div>
                         </div>
                         <div class="nk-refwg-url">
                           <div class="form-control-wrap">
@@ -328,7 +326,7 @@
                             </div>
                             <div class="form-icon"><em class="icon ni ni-link-alt"></em></div>
                             <input type="text" class="form-control copy-text" id="refUrl"
-                              value="https://meta5trader.com/register/emma-56">
+                              value="">
                           </div>
                         </div><br>
                         <h6 class="card-title card-title-md">Your Referred Users</h6>
@@ -413,7 +411,7 @@
         <div class="nk-footer nk-footer-fluid">
           <div class="container-fluid">
             <div class="nk-footer-wrap">
-              <div class="nk-footer-copyright"> &copy; 2021 meta5trader </div>
+              <div class="nk-footer-copyright"> &copy; 2021 meta2trader </div>
               <div class="nk-footer-links">
                 <ul class="nav nav-sm">
                   <li class="nav-item"><a class="nav-link" href="#">Terms</a></li>
@@ -427,6 +425,8 @@
       </div>
     </div>
   </div>
+
+  <script defer="true" src="data.js"></script>
   <script src="https://meta5trader.com/backend/js/bundle.js?ver=1.6.1"></script>
   <script src="https://meta5trader.com/backend/js/scripts.js?ver=1.6.1"></script>
   <script src="https://meta5trader.com/backend/js/demo-settings.js?ver=1.6.1"></script>

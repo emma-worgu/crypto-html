@@ -7,12 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="@page-discription">
   <link rel="shortcut icon" href="images/favicon.png">
-  <title>Transfer Fund | meta5trader </title>
+  <title>Transfer Fund | meta2trader </title>
   <link rel="stylesheet" href="css/dashlite-63021.css">
   <link id="skin-purple" rel="stylesheet" href="css/theme-63021.css">
   <link href="css/jquery.growl.css" rel="stylesheet">
   <script src="https://meta5trader.com/process/countries.js"></script>
 </head>
+
+<script>
+  function logout () {
+  localStorage.removeItem('token');
+
+  document.location.href = '/login.html';
+};
+
+</script>
 
 <body class="nk-body toastr-info npc-crypto has-sidebar has-sidebar-fat ui-clean ">
   <div class="nk-app-root">
@@ -44,8 +53,8 @@
                   <div class="user-card-wrap">
                     <div class="user-card">
                       <div class="user-avatar"><span></span></div>
-                      <div class="user-info"><span class="lead-text">emma-56</span><span
-                          class="sub-text">emmanuelworgu@gmail.com</span></div>
+                      <div class="user-info"><span class="lead-text accountName">Loading...</span><span
+                          class="sub-text accountEmail">Loading...</span></div>
                       <div class="user-action"><em class="icon ni ni-chevron-down"></em></div>
                     </div>
                   </div>
@@ -63,16 +72,14 @@
                   <ul class="link-list">
                     <li><a href="/myaccount.html"><em
                           class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                    <li><a href="https://meta5trader.com/user/activity-log"><em
+                    <li><a href="#"><em
                           class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
                   </ul>
                   <ul class="link-list">
-                    <li><a href="https://meta5trader.com/logout"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <li><a href="#"
+                        onclick="event.preventDefault(); logout();">
 
-                        <form id="logout-form" action="https://meta5trader.com/logout" method="POST"
-                          style="display: none;"><input type="hidden" name="_token"
-                            value="PyFm9wJ2oc9wKoPfeXVuVb1z2ZgputZ6jJRdAO3j"></form>
+                        <form id="logout-form"></form>
 
                         <em class="icon ni ni-signout"></em><span>Sign out</span>
                       </a></li>
@@ -216,7 +223,7 @@
                         </div>
                         <div class="user-info d-none d-md-block">
                           <div class="user-status user-status-unverified">Good afternoon</div>
-                          <div class="user-name dropdown-indicator">emma-56</div>
+                          <div class="user-name dropdown-indicator accountName">Loading...</div>
                         </div>
                       </div>
                     </a>
@@ -226,8 +233,8 @@
 
 
                           <div class="user-avatar"><span></span></div>
-                          <div class="user-info"><span class="lead-text">emma-56</span><span
-                              class="sub-text">emmanuelworgu@gmail.com</span></div>
+                          <div class="user-info"><span class="lead-text accountName">Loading...</span><span
+                              class="sub-text accountEmail">Loading...</span></div>
                         </div>
                       </div>
                       <div class="dropdown-inner user-account-info">
@@ -246,8 +253,8 @@
                       </div>
                       <div class="dropdown-inner">
                         <ul class="link-list">
-                          <li><a href="https://meta5trader.com/logout"
-                              onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><em
+                          <li><a href="#"
+                              onclick="event.preventDefault(); logout();"><em
                                 class="icon ni ni-signout"></em><span>Sign out</span></a></li>
                         </ul>
                       </div>
@@ -281,24 +288,50 @@
 
               <div class="buysell-title text-center">
                 <h4 class="title">Transfer Fund!</h4>
-                <p class="lead text-primary">Your currently have <strong>$ 0.00 </strong> in your deposit wallet. </p>
+                <p class="lead text-primary">Your currently have <strong class="user-balance">$ 0.00 </strong> in your deposit wallet. </p>
                 <p>To transfer fund from your wallet to another user's wallet, enter the receiver's username and proceed
                   to enter amount to transfer.</p>
                 <p>To <strong>ensure safe delivery</strong> of fund to user please enter <strong>a valid account
-                    username</strong> </p>
-
+                    wallet address</strong> </p>
+              </div>
+              <div style="margin-bottom: 40px; display: none;" id="error-div">
+                <div class="alert alert-danger">
+                  <div class="alert-cta flex-wrap flex-md-nowrap">
+                    <div class="alert-text">
+                      <p id="error-text"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="margin-bottom: 40px; display: none;" id="success-div">
+                <div class="alert alert-success">
+                  <div class="alert-cta flex-wrap flex-md-nowrap">
+                    <div class="alert-text">
+                      <p id="success-text"></p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="buysell-block">
 
-                <form method="post" class="buysell-form" action="#">
-                  <input type="hidden" name="_token" value="PyFm9wJ2oc9wKoPfeXVuVb1z2ZgputZ6jJRdAO3j">
+                <form>
 
                   <div class="buysell-field form-group">
-                    <div class="form-label-group"><label class="form-label" for="buysell-amount">Enter Username</label>
-                    </div>
+                    <div class="form-label-group"><label class="form-label" for="buysell-amount">Enter Wallet Adress</label>
+                  </div>
                     <div class="form-control-group">
                       <input type="text" class="form-control form-control-lg" name="username"
-                        placeholder="Enter Receiver's Username" id="mySelect3" onkeyup="myFunction1()">
+                        placeholder="Enter Receiver's Username" id="walletAdd" onchange="withdrawsInfo()">
+
+                    </div>
+                  </div>
+
+                  <div class="buysell-field form-group">
+                    <div class="form-label-group"><label class="form-label" for="buysell-amount">Name</label>
+                  </div>
+                    <div class="form-control-group">
+                      <input type="text" class="form-control form-control-lg walletName" name="username"
+                        placeholder="Receiver's Name" id="mySelect3" readonly>
 
                     </div>
                   </div>
@@ -309,7 +342,7 @@
                         Transfer</label></div>
                     <div class="form-control-group">
                       <input type="number" class="form-control form-control-lg form-control-number" name="amount"
-                        placeholder=" 0.00" id="mySelect3" onkeyup="myFunction1()">
+                        placeholder=" 0.00" id="amountToSend">
                       <div class="form-dropdown">
 
                         <div class="dropdown">
@@ -324,7 +357,7 @@
 
 
                   <div class="buysell-field form-action"><button type="submit"
-                      class="btn btn-lg btn-block btn-primary">Transfer Fund</button></div>
+                      class="btn btn-lg btn-block btn-primary" id="btn-text" onclick="event.preventDefault(); send();">Transfer Fund</button></div>
 
                 </form>
               </div>
@@ -366,7 +399,7 @@
         <div class="nk-footer nk-footer-fluid">
           <div class="container-fluid">
             <div class="nk-footer-wrap">
-              <div class="nk-footer-copyright"> &copy; 2021 meta5trader </div>
+              <div class="nk-footer-copyright"> &copy; 2021 meta2trader </div>
               <div class="nk-footer-links">
                 <ul class="nav nav-sm">
                   <li class="nav-item"><a class="nav-link" href="#">Terms</a></li>
@@ -380,6 +413,8 @@
       </div>
     </div>
   </div>
+
+  <script defer="true" src="data.js"></script>
   <script src="https://meta5trader.com/backend/js/bundle.js?ver=1.6.1"></script>
   <script src="https://meta5trader.com/backend/js/scripts.js?ver=1.6.1"></script>
   <script src="https://meta5trader.com/backend/js/demo-settings.js?ver=1.6.1"></script>

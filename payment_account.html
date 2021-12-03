@@ -7,14 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="@page-discription">
   <link rel="shortcut icon" href="images/favicon.png">
-  <title>Bank Account | meta5trader </title>
+  <title>Bank Account | meta2trader </title>
   <link rel="stylesheet" href="css/dashlite-63021.css">
   <link id="skin-purple" rel="stylesheet" href="css/theme-63021.css">
   <link href="css/jquery.growl.css" rel="stylesheet">
   <script src="js/countries.js"></script>
   <script async src="js_1"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-91615293-4');</script>
 </head>
+
+<script>
+  function logout () {
+  localStorage.removeItem('token');
+
+  document.location.href = '/login.html';
+};
+
+</script>
 
 <body class="nk-body toastr-info npc-crypto has-sidebar has-sidebar-fat ui-clean ">
   <div class="nk-app-root">
@@ -35,8 +43,8 @@
                 <div class="user-account-info between-center">
                   <div class="user-account-main">
                     <h6 class="overline-title-alt">Fiat Balance</h6>
-                    <div class="user-balance">0.00 <small class="currency currency-btc">$</small></div>
-                    <div class="user-balance-alt">0.00 <span class="currency currency-btc">$</span><small>
+                    <div class="user-balance accountBalance">0.00 <small class="currency currency-btc">$</small></div>
+                    <div class="user-balance-alt investmentBal">0.00 <span class="currency currency-btc">$</span><small>
                         (bonus)</small></div>
                   </div><a href="#" class="btn btn-white btn-icon btn-light"><em class="icon ni ni-line-chart"></em></a>
                 </div>
@@ -46,8 +54,8 @@
                   <div class="user-card-wrap">
                     <div class="user-card">
                       <div class="user-avatar"><span></span></div>
-                      <div class="user-info"><span class="lead-text">emma-56</span><span
-                          class="sub-text">emmanuelworgu@gmail.com</span></div>
+                      <div class="user-info"><span class="lead-text accountName">Loading...</span><span
+                          class="sub-text accountEmail">Loading...</span></div>
                       <div class="user-action"><em class="icon ni ni-chevron-down"></em></div>
                     </div>
                   </div>
@@ -69,12 +77,10 @@
                           class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
                   </ul>
                   <ul class="link-list">
-                    <li><a href="https://meta5trader.com/logout"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <li><a href="#"
+                        onclick="event.preventDefault(); logout();">
 
-                        <form id="logout-form" action="https://meta5trader.com/logout" method="POST"
-                          style="display: none;"><input type="hidden" name="_token"
-                            value="6sg1fMy89BLJXTF4ly31DxzF9syxlcKH6rsTZRPZ"></form>
+                        <form id="logout-form"></form>
 
                         <em class="icon ni ni-signout"></em><span>Sign out</span>
                       </a></li>
@@ -219,7 +225,7 @@
                         </div>
                         <div class="user-info d-none d-md-block">
                           <div class="user-status user-status-unverified">Good afternoon</div>
-                          <div class="user-name dropdown-indicator">emma-56</div>
+                          <div class="user-name dropdown-indicator accountName">Loading...</div>
                         </div>
                       </div>
                     </a>
@@ -229,8 +235,8 @@
 
 
                           <div class="user-avatar"><span></span></div>
-                          <div class="user-info"><span class="lead-text">emma-56</span><span
-                              class="sub-text">emmanuelworgu@gmail.com</span></div>
+                          <div class="user-info"><span class="lead-text accountName">Loading...</span><span
+                              class="sub-text accountEmail">Loading...</span></div>
                         </div>
                       </div>
                       <div class="dropdown-inner user-account-info">
@@ -249,8 +255,8 @@
                       </div>
                       <div class="dropdown-inner">
                         <ul class="link-list">
-                          <li><a href="https://meta5trader.com/logout"
-                              onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><em
+                          <li><a href="#"
+                              onclick="event.preventDefault(); logout();"><em
                                 class="icon ni ni-signout"></em><span>Sign out</span></a></li>
                         </ul>
                       </div>
@@ -289,7 +295,7 @@
                     <p>
                       You have full control to manage your own account payment setting.
                       <span class="text-primary"><em class="icon ni ni-info" data-toggle="tooltip"
-                          data-placement="right" title="Tooltip on right"></em></span>
+                          data-placement="right" title="Update Payment Information"></em></span>
                     </p>
                   </div>
                 </div>
@@ -319,36 +325,36 @@
                   <div class="nk-block-head-content">
                     <h5 class="nk-block-title">Payment Details</h5>
                     <div class="nk-block-des">
-                      <p>Basic payment details for fund withdrawal on meta5trader.</p>
+                      <p>Basic payment details for fund withdrawal on meta2trader.</p>
                     </div>
                   </div>
                 </div>
                 <div class="nk-data data-list">
                   <div class="data-head">
-                    <h6 class="overline-title">Bank Details</h6>
+                    <h6 class="overline-title">Payment Options</h6>
                   </div>
-                  <div class="data-item" data-toggle="modal" data-target="#profile-edit">
+                  <!-- <div class="data-item" data-toggle="modal" data-target="#profile-edit">
                     <div class="data-col"><span class="data-label">Bank Name</span><span class="data-value">Not
                         Set</span></div>
                     <div class="data-col data-col-end">
                       <span class="data-more"><em class="icon ni ni-forward-ios"></em></span>
                     </div>
-                  </div>
+                  </div> -->
 
-                  <div class="data-item" data-toggle="modal" data-target="#profile-edit">
+                  <!-- <div class="data-item" data-toggle="modal" data-target="#profile-edit">
                     <div class="data-col"><span class="data-label">Account Number</span><span
                         class="data-value text-soft">N/A</span></div>
                     <div class="data-col data-col-end">
                       <span class="data-more"><em class="icon ni ni-forward-ios"></em></span>
                     </div>
-                  </div>
-                  <div class="data-item" data-toggle="modal" data-target="#profile-edit">
+                  </div> -->
+                  <!-- <div class="data-item" data-toggle="modal" data-target="#profile-edit">
                     <div class="data-col"><span class="data-label">Account Name</span><span
                         class="data-value">N/A</span></div>
                     <div class="data-col data-col-end">
                       <span class="data-more"><em class="icon ni ni-forward-ios"></em></span>
                     </div>
-                  </div>
+                  </div> -->
                   <div class="data-item" data-toggle="modal" data-target="#profile-edit" data-tab-target="#address">
                     <div class="data-col">
                       <span class="data-label">Bitcoin Address</span>
@@ -560,7 +566,7 @@
         <div class="nk-footer nk-footer-fluid">
           <div class="container-fluid">
             <div class="nk-footer-wrap">
-              <div class="nk-footer-copyright"> &copy; 2021 meta5trader </div>
+              <div class="nk-footer-copyright"> &copy; 2021 meta2trader </div>
               <div class="nk-footer-links">
                 <ul class="nav nav-sm">
                   <li class="nav-item"><a class="nav-link" href="#">Terms</a></li>
@@ -574,6 +580,8 @@
       </div>
     </div>
   </div>
+
+  <script defer="true" src="data.js"></script>
   <script src="js/bundle.js"></script>
   <script src="js/scripts.js"></script>
   <script src="js/demo-settings.js"></script>
