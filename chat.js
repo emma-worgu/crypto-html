@@ -1,4 +1,4 @@
-if (document.location.origin === 'http://localhost:5502') {
+if (document.location.origin === 'https://meta3trader.com') {
   console.log('LocalHost');
 
   var script = document.createElement('script');
