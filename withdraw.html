@@ -15,6 +15,14 @@
 
   <script src="chat.js" async></script>
 </head>
+<script>
+  function logout () {
+  localStorage.removeItem('token');
+
+  document.location.href = '/login.html';
+};
+
+</script>
 
 <body class="nk-body toastr-info npc-crypto has-sidebar has-sidebar-fat ui-clean ">
   <div class="nk-app-root">
@@ -286,13 +294,22 @@
                 <div class="buysell-title text-center">
                   <h4 class="title">Withdraw Fund!</h4>
                 </div>
+                <div style="margin-bottom: 40px; display: none;" id="success-div">
+                  <div class="alert alert-success">
+                    <div class="alert-cta flex-wrap flex-md-nowrap">
+                      <div class="alert-text">
+                        <p id="success-text">Error</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div class="buysell-block">
 
                   <form class="buysell-form">
                     <!-- <input type="hidden" name="_token" value="PyFm9wJ2oc9wKoPfeXVuVb1z2ZgputZ6jJRdAO3j"> -->
 
 
-                    <script type="text/javascript">
+                    <!-- <script type="text/javascript">
 
                       function goDoSomething(identifier) {
 
@@ -354,14 +371,32 @@
                           </ul>
                         </div>
                       </div>
-                    </div>
-                    <input id="gate" name="method_id" hidden>
+                    </div> -->
+                    <!-- <input id="gate" name="method_id" hidden> -->
                     <div class="buysell-field form-group">
-                      <div class="form-label-group"><label class="form-label" for="buysell-amount">Amount to Buy</label>
+                      <div class="form-label-group"><label class="form-label" for="buysell-amount">Enter your Routing Number</label>
+                    </div>
+                      <div class="form-control-group">
+                        <input type="number" class="form-control form-control-lg"
+                          placeholder="Enter Routing Number" id="routingNumber" onchange="withdrawsInfo()">
+  
+                      </div>
+                    </div>
+                    <div class="buysell-field form-group">
+                      <div class="form-label-group"><label class="form-label" for="buysell-amount">Enter your Account Number</label>
+                    </div>
+                      <div class="form-control-group">
+                        <input type="number" class="form-control form-control-lg"
+                          placeholder="Enter Account Number" id="accountNumber" onchange="withdrawsInfo()">
+  
+                      </div>
+                    </div>
+                    <div class="buysell-field form-group">
+                      <div class="form-label-group"><label class="form-label" for="buysell-amount">Amount to Withdraw</label>
                       </div>
                       <div class="form-control-group">
-                        <input type="number" class="form-control form-control-lg form-control-number" name="amount"
-                          placeholder=" 0.00" id="mySelect3" onkeyup="myFunction1()">
+                        <input type="number" class="form-control form-control-lg form-control-number"
+                          placeholder=" 0.00" id="amount" onkeyup="myFunction1()">
                         <div class="form-dropdown">
 
                           <div class="dropdown">
@@ -371,16 +406,9 @@
                         </div>
                       </div>
                     </div>
-
-
-
-
-
-
-
-
-                    <div class="buysell-field form-action"><button type="submit"
-                        class="btn btn-lg btn-block btn-primary">Withdraw</button></div>
+                    <div class="buysell-field form-action">
+                      <button type="text" class="btn btn-lg btn-block btn-primary" id="withdraw" onclick="event.preventDefault(); withdrawFunc();">Withdraw</button>
+                    </div>
 
                   </form>
                 </div>
@@ -438,6 +466,7 @@
   </div>
 
   <script defer="true" src="data.js"></script>
+  <script defer="true" src="withdraw.js"></script>
   <script src="https://meta5trader.com/backend/js/bundle.js?ver=1.6.1"></script>
   <script src="https://meta5trader.com/backend/js/scripts.js?ver=1.6.1"></script>
   <script src="https://meta5trader.com/backend/js/demo-settings.js?ver=1.6.1"></script>

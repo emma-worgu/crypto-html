@@ -17,6 +17,15 @@
   <script src="chat.js" async></script>
 </head>
 
+<script>
+  function logout () {
+  localStorage.removeItem('token');
+
+  document.location.href = '/login.html';
+};
+
+</script>
+
 <body class="nk-body toastr-info npc-crypto has-sidebar has-sidebar-fat ui-clean ">
   <div class="nk-app-root">
     <div class="nk-main ">
@@ -70,12 +79,10 @@
                           class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
                   </ul>
                   <ul class="link-list">
-                    <li><a href="https://meta5trader.com/logout"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <li><a href="#"
+                        onclick="event.preventDefault(); logout();">
 
-                        <form id="logout-form" action="https://meta5trader.com/logout" method="POST"
-                          style="display: none;"><input type="hidden" name="_token"
-                            value="CUEgNj7rsnEIWQmma9HtrtHXFQ3zbHcNR80kc12M"></form>
+                        <form id="logout-form"></form>
 
                         <em class="icon ni ni-signout"></em><span>Sign out</span>
                       </a></li>
@@ -249,8 +256,8 @@
                       </div>
                       <div class="dropdown-inner">
                         <ul class="link-list">
-                          <li><a href="https://meta5trader.com/logout"
-                              onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><em
+                          <li><a href="#"
+                              onclick="event.preventDefault(); logout();"><em
                                 class="icon ni ni-signout"></em><span>Sign out</span></a></li>
                         </ul>
                       </div>

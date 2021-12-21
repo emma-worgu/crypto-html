@@ -17,7 +17,7 @@ if (document.location.origin === 'https://meta3trader.com') {
   script.onload = function () {
     console.log('Loading Script...');
   }
-  script.src = "//code.tidio.co/xatmxra0gfgcrfgg96regueu0glaw8qx.js";
+  script.src = "https://code.tidio.co/xatmxra0gfgcrfgg96regueu0glaw8qx.js";
 
   document.head.appendChild(script);
 }
