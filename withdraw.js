@@ -47,3 +47,20 @@ async function withdrawFunc () {
     console.log(error);
   }
 };
+
+async function listwithdrawals () {
+  const url = 'https://crypto-backend1.herokuapp.com/api/user/withdraws/';
+
+  const request = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'auth-token': localStorage.getItem('token'),
+    }
+  });
+
+  const response = await request.json();
+
+  console.log(response);
+};

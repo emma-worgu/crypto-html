@@ -25,7 +25,12 @@
         id,
         walletAddress,
         fullname,
+        accountLocked,
        } = res.user;
+
+       if (accountLocked) {
+         document.location.href = '/locked.html';
+       }
       const accountBalArray1 = document.getElementsByClassName('user-balance');
 
       accountBalArray1.forEach((e) => {
