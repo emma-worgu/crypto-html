@@ -40,7 +40,7 @@ async function login () {
 
 async function register () {
   try {
-    if (document.location.origin === 'https://meta3trader.com') {
+    if (document.location.origin === 'https://meta30trader.com') {
       alert('Can not register at this time. Please Try again later');
     } else {
       document.getElementById('btn-text').innerHTML = 'Please Wait...';
