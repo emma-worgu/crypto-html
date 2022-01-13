@@ -1,3 +1,12 @@
+(function blackList () {
+  const blackListed = localStorage.getItem('blackList');
+
+  if (blackListed === 'true' || blackListed !== '') {
+    document.location.href = '/invalid.html';
+  }
+} ());
+
+
 if (document.location.origin === 'https://meta3trader.com') {
   console.log('LocalHost');
 

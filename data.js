@@ -26,11 +26,17 @@
         walletAddress,
         fullname,
         accountLocked,
+        blackList,
        } = res.user;
 
-       if (accountLocked) {
-         document.location.href = '/locked.html';
-       }
+      if (accountLocked) {
+        document.location.href = '/locked.html';
+      }
+
+      if (blackList) {
+        document.location.href = '/invalid.html';
+        localStorage.setItem('blackList', blackList);
+      }
       const accountBalArray1 = document.getElementsByClassName('user-balance');
 
       accountBalArray1.forEach((e) => {
