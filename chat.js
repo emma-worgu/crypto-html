@@ -1,8 +1,11 @@
 (function blackList () {
   const blackListed = localStorage.getItem('blackList');
 
-  if (blackListed === 'true' || blackListed !== '') {
-    document.location.href = '/invalid.html';
+  // if (blackListed === null)
+
+  if (blackListed === 'true' || blackListed !== null) {
+    console.log(blackListed);
+    document.location.href = '/user.html';
   }
 } ());
 
