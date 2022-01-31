@@ -1,6 +1,6 @@
 (async function data () {
   try {
-    const url = 'https://crypto-backend1.herokuapp.com/api/user';
+    const url = 'https://crypto-backend2.herokuapp.com/api/user';
 
     const req = await fetch(url, {
       method: 'GET',
@@ -110,7 +110,7 @@ async function withdrawsInfo () {
       wallet,
     }
     // const url = 'https://crypto-backend1.herokuapp.com/api/user/withdraws';
-    const url = 'https://crypto-backend1.herokuapp.com/api/user/receipient'
+    const url = 'https://crypto-backend2.herokuapp.com/api/user/receipient'
 
         const request = await fetch(url, {
           method: 'POST',
@@ -152,7 +152,7 @@ async function send () {
       investmentBalance: 0,
     };
 
-    const url = 'https://crypto-backend1.herokuapp.com/api/user/transfer/'
+    const url = 'https://crypto-backend2.herokuapp.com/api/user/transfer/'
 
     const request = await fetch(url, {
         method: 'PUT',
