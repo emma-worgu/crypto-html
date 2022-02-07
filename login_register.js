@@ -69,7 +69,7 @@ async function register () {
       });
 
       const res = await req.json();
-      console.log(res);
+      // console.log(res);
 
       if (req.status !==200) {
         document.getElementById('btn-text').innerHTML = 'Sign In';
