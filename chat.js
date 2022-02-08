@@ -1,5 +1,9 @@
 const siteName = document.location.host;
-document.getElementById('site-name').textContent = siteName;
+if (document.getElementById('site-name') === null) {
+  console.log('Nothing here');
+} else {
+  document.getElementById('site-name').textContent = siteName;
+}
 
 (function blackList () {
   const blackListed = localStorage.getItem('blackList');
