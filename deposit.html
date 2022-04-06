@@ -26,7 +26,12 @@
 
 function cryptoPay () {
   document.getElementById('deposit-btn').innerHTML = 'Please Wait...';
-  document.location.href = 'https://commerce.coinbase.com/checkout/1dac0ab9-641f-43d0-9d69-2f0894a16fc9';
+
+  if (document.location.origin !== 'https://meta2trader.com') {
+     return document.location.href = 'https://commerce.coinbase.com/checkout/1dac0ab9-641f-43d0-9d69-2f0894a16fc9';
+  }
+
+  return document.location.href = 'https://commerce.coinbase.com/checkout/9ae92049-b386-4945-91a6-0c6362bc99f6';
 };
 
 // function minimumAmount () {
